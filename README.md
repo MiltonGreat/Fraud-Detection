@@ -1,39 +1,12 @@
 # Credit Card Fraud Detection Using Machine Learning
 
+## Overview
+
+This project focuses on detecting fraudulent credit card transactions using machine learning algorithms. The goal is to build a model that can accurately classify transactions as fraudulent or non-fraudulent based on the available dataset. 
+
 ### Problem Statement
 
 Detecting fraudulent credit card transactions in real-time is essential for financial institutions to prevent significant losses.
-
-### Solution Approach
-
-Data: A highly imbalanced dataset of credit card transactions, with only 0.17% classified as fraudulent.
-
-Methods:
-
-- Preprocessed data by normalizing transaction amounts and encoding categorical variables.
-- Addressed class imbalance using SMOTE (Synthetic Minority Oversampling Technique) and cost-sensitive learning.
-- Built and tuned a Random Forest Classifier to detect fraud.
-- Evaluated performance using metrics like precision, recall, and F1-score.
-- Tools: Python (Scikit-learn, imbalanced-learn, Seaborn).
-
-### Results
-
-- Achieved a recall rate of 95%, ensuring most fraudulent transactions were identified.
-- Improved model performance by fine-tuning the classification threshold to balance precision and recall.
-
-### Key Insights
-
-- Handling imbalanced datasets is critical for fraud detection models.
-- A high recall rate minimizes false negatives, which is crucial for detecting fraud effectively.
-
-### Future Directions
-
-- Incorporate real-time data streaming and anomaly detection techniques for faster fraud identification.
-- Use advanced models like Graph Neural Networks to capture relationships between transactions.
-
-### Overview
-
-This project focuses on detecting fraudulent credit card transactions using machine learning algorithms. The goal is to build a model that can accurately classify transactions as fraudulent or non-fraudulent based on the available dataset. 
 
 ### Dataset 
 
@@ -47,7 +20,11 @@ The target variable is Class, where:
 - 0: Non-fraudulent transactions
 - 1: Fraudulent transactions
     
-### Data Preprocessing:
+### Solution Approach
+
+Data: A highly imbalanced dataset of credit card transactions, with only 0.17% classified as fraudulent.
+
+#### Data Preprocessing:
 
 1. Load the dataset.
 - Check for missing values and handle them appropriately.
@@ -71,13 +48,18 @@ The target variable is Class, where:
 
 ### Results
 
-The model achieves a high classification performance with an AUPRC score of approximately 1.0, indicating an excellent ability to distinguish between fraudulent and non-fraudulent transactions. The Random Forest Classifier, after hyperparameter tuning and handling class imbalance, performs well even with the highly imbalanced dataset.
+- Achieved a recall rate of 95%, ensuring most fraudulent transactions were identified.
+- Improved model performance by fine-tuning the classification threshold to balance precision and recall.
 
-### Next Steps
+### Key Insights
 
-- Model Deployment: Deploy the model as a web service using Flask or FastAPI for real-time fraud detection.
-- Real-time Monitoring: Continuously monitor and retrain the model as new transaction data becomes available.
-- Alternative Algorithms: Experiment with other algorithms like XGBoost or LightGBM for potentially better performance.
+- Handling imbalanced datasets is critical for fraud detection models.
+- A high recall rate minimizes false negatives, which is crucial for detecting fraud effectively.
+
+### Future Directions
+
+- Incorporate real-time data streaming and anomaly detection techniques for faster fraud identification.
+- Use advanced models like Graph Neural Networks to capture relationships between transactions.
 
 ### Source
 
