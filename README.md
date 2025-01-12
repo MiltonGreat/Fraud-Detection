@@ -69,13 +69,6 @@ The target variable is Class, where:
 - Evaluate the model using metrics like classification report, ROC-AUC, and Precision-Recall AUC (AUPRC).
 - Analyze the confusion matrix and other evaluation metrics to understand the model’s performance.
 
-### Evaluation Metrics
-
-Since the dataset is highly imbalanced, accuracy is not a reliable metric. Instead, the model's performance is evaluated using:
-- Classification Report: Provides precision, recall, and F1-score for both classes.
-- ROC-AUC: Measures the ability of the model to distinguish between classes.
-- AUPRC: Measures the area under the Precision-Recall Curve, which is particularly useful for imbalanced datasets.
-
 ### Results
 
 The model achieves a high classification performance with an AUPRC score of approximately 1.0, indicating an excellent ability to distinguish between fraudulent and non-fraudulent transactions. The Random Forest Classifier, after hyperparameter tuning and handling class imbalance, performs well even with the highly imbalanced dataset.
