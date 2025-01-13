@@ -2,18 +2,20 @@
 
 ## Overview
 
-This project focuses on detecting fraudulent credit card transactions using machine learning algorithms. The goal is to build a model that can accurately classify transactions as fraudulent or non-fraudulent based on the available dataset. 
+This project focuses on detecting fraudulent credit card transactions using machine learning algorithms. The primary goal is to develop a model that accurately distinguishes between fraudulent and non-fraudulent transactions in a highly imbalanced dataset.
 
 ### Problem Statement
 
-Detecting fraudulent credit card transactions in real-time is essential for financial institutions to prevent significant losses.
+Fraudulent credit card transactions pose a significant challenge to financial institutions, leading to substantial financial losses. Detecting these transactions in real time is crucial for preventing fraud and ensuring customer trust.
 
 ### Dataset 
 
-The dataset used in this project is from Kaggle and contains transactions made by credit card holders in Europe in September 2013. The dataset includes 284,807 transactions, with only 492 (0.172%) being fraudulent. The features consist of transformed data from the original features using Principal Component Analysis (PCA) due to privacy concerns. The two non-PCA transformed features are:
+The dataset used for this project is sourced from Kaggle and contains credit card transaction data from Europe in September 2013. The dataset consists of 284,807 transactions, of which only 492 (0.172%) are labeled as fraudulent.
 
+Key features include:
 - Time: Time elapsed between the transaction and the first transaction in the dataset.
 - Amount: The amount of the transaction.
+- V1–V28: PCA-transformed features for privacy protection.
 
 The target variable is Class, where:
 
@@ -33,7 +35,7 @@ Data: A highly imbalanced dataset of credit card transactions, with only 0.17% c
 
 2. Model Building:
 - Split the dataset into training and testing sets.
-- Train a Random Forest Classifier on the training data.
+- Chose Random Forest as the primary model due to its robustness in handling imbalanced datasets and feature importance insights.
 - Evaluate the model using appropriate metrics (accuracy, precision, recall, AUPRC).
 
 3. Hyperparameter Tuning:
@@ -48,14 +50,28 @@ Data: A highly imbalanced dataset of credit card transactions, with only 0.17% c
 
 ### Results
 
-- Achieved a recall rate of 95%, ensuring most fraudulent transactions were identified.
+- Achieved a recall rate of 100%, ensuring most fraudulent transactions were identified.
 - Improved model performance by fine-tuning the classification threshold to balance precision and recall.
 
 ### Key Insights
 
-- Handling imbalanced datasets is critical for fraud detection models.
-- A high recall rate minimizes false negatives, which is crucial for detecting fraud effectively.
+1. Model Performance:
+- ROC-AUC Score: 1.000
+- AUPRC: 1.000
+- Classification report metrics showed perfect scores for precision, recall, and F1-score, reflecting the model's effectiveness in detecting fraudulent transactions.
 
+2. Hyperparameter Tuning:
+The best parameters identified were:
+- n_estimators: 100
+- max_depth: None
+- min_samples_split: 2
+- class_weight: None
+
+3. SMOTE Effectiveness:
+Balanced class distribution achieved after applying SMOTE:
+- Fraudulent transactions: 284,315
+- Non-fraudulent transactions: 284,315
+ 
 ### Future Directions
 
 - Incorporate real-time data streaming and anomaly detection techniques for faster fraud identification.
